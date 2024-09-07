@@ -32,12 +32,12 @@ export class ShortenerService {
             'role': '',
             'phone': '',
             'isLocked': false,
-            'turn': turn
+            'turn': turn + 1
           }
         };
     
         const client = axios.create({
-          baseURL: "http://localhost:3000",
+          baseURL: "http://" + this.localhost + ":3000",
         });
     
         let fetchResult: AxiosResponse = await client.put("/users/update", data, config);
